@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="validation.js"></script>
+    <title>Create Contract - ContractMaster</title>
+</head>
+<body>
+    <header>
+        <h1>ContractMaster</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse_contracts.html">Browse Contracts</a></li>
+                <li><a href="create_contract.html">Create Contract</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="container">
+        <h2>Create a Contract</h2>
+        <form action="process_contract.php" method="POST" onsubmit="return validateForm()">
+            <label for="target">Target Name:</label>
+            <input type="text" id="target" name="target" required>
+            
+            <label for="location">Target Location:</label>
+            <input type="text" id="location" name="location" required>
+            
+            <label for="objectives">Additional Objectives:</label>
+            <textarea id="objectives" name="objectives"></textarea>
+            
+            <label for="reward">Reward:</label>
+            <input type="number" id="reward" name="reward" required>
+            
+            <label for="level">Level Required:</label>
+            <input type="text" id="level" name="level">
+            
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline">
+            
+            <label for="contract-type">Contract Type:</label>
+            <select id="contract-type" name="contract-type">
+                <option value="assassination">Assassination</option>
+                <option value="espionage">Espionage</option>
+                <option value="retrieval">Data Retrieval</option>
+                <!-- Add more contract types as needed -->
+            </select>
+            
+            <label for="contract-status">Contract Status:</label>
+            <input type="radio" id="contract-status-open" name="contract-status" value="open" checked>
+            <label for="contract-status-open">Open</label>
+            <input type="radio" id="contract-status-closed" name="contract-status" value="closed">
+            <label for="contract-status-closed">Closed</label>
+            
+            <button type="submit">Create Contract</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 ContractMaster</p>
+    </footer>
+</body>
+</html>
+
